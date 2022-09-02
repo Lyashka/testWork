@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/css/index.css">
+</head>
+<body>
+    <div>
+        <svg class="proress" width="230" height="230">
+            <circle class="progress_circle" stroke="#005bff" stroke-width="10" cx="110" cy="110" r="99" fill="transparent"/>
+        </svg>
+        <!-- radius = (width / 2) - (stroke-width * 2) 52 -->
+    </div> 
+    
+    <div>
+        <h3>Value</h3>
+        <input type="text" class="inputPrecent" oninput="changeHandler(this)"/>
+    </div>
+     <div>
+        <h3>Animate</h3>
+        <button onclick="onClickAnimation()"></button>
+     </div>
+    
+   
+
+    <script src="/src/js/index.js"></script>
+</body>
+</html>
