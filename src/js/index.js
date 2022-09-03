@@ -6,12 +6,10 @@ console.log(radius)
 const circumference = 2 * Math.PI * radius //длина окружности
 console.log(circumference)
 const inputPrecent = document.querySelector('.inputPrecent')
+const toggleButtonAnimate = document.querySelector('#toggle-button-animate') 
+const toggleButtonHidden = document.querySelector('#toggle-button-hidden')
+const progressBackground = document.querySelector('.progressBackground')
 
-// inputPrecent.addEventListener('change', function(){
-//     if(inputPrecent.value <= 100){
-//         setProgress(inputPrecent.value)
-//     }
-// })
 
 const changeHandler = (e) => {
     const value = e.value
@@ -35,3 +33,29 @@ function setProgress(percent) {
     const offset = circumference - percent / 100 * circumference
     circle.style.strokeDashoffset = offset;
 }
+
+toggleButtonAnimate.addEventListener('click', () => {
+    if(!circle.classList.contains('animateCircle')){
+        circle.classList.add('animateCircle')
+        document.querySelector('.inputPrecent').disabled = true
+        document.querySelector('.inputPrecent').value = ''
+        circle.style.strokeDashoffset = 622.0353454107791
+        
+    }
+    else{
+        circle.classList.remove('animateCircle')
+        document.querySelector('.inputPrecent').disabled = false
+    }
+})
+
+toggleButtonHidden.addEventListener('click', () => {
+    if(!circle.classList.contains('circkeHidden')){
+        circle.classList.add('circkeHidden')
+        progressBackground.classList.add('circkeHidden')
+    }
+    else{
+        circle.classList.remove('circkeHidden')
+        progressBackground.classList.remove('circkeHidden')
+    }
+})
+
